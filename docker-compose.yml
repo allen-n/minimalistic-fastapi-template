@@ -36,10 +36,24 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - '8000:8000'
     depends_on:
       db:
         condition: service_healthy
+    command:
+      [
+        'uv',
+        'run',
+        'uvicorn',
+        'api.main:app',
+        '--host',
+        '0.0.0.0',
+        '--port',
+        '8000',
+        '--reload',
+      ]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:example@postgres:5432/hero_db
     develop:
       watch:
         - path: .

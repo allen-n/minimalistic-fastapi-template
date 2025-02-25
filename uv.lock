@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.12"
 
 [[package]]
@@ -173,7 +174,7 @@ name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de", size = 336121 }
 wheels = [
@@ -491,6 +492,7 @@ dependencies = [
     { name = "bcrypt" },
     { name = "black" },
     { name = "fastapi" },
+    { name = "greenlet" },
     { name = "httpx" },
     { name = "isort" },
     { name = "passlib" },
@@ -515,6 +517,7 @@ requires-dist = [
     { name = "bcrypt", specifier = "==4.0.1" },
     { name = "black", specifier = ">=24.1.0" },
     { name = "fastapi", specifier = ">=0.115.6" },
+    { name = "greenlet", specifier = ">=3.1.1" },
     { name = "httpx", specifier = ">=0.27.0" },
     { name = "isort", specifier = ">=5.13.0" },
     { name = "passlib", specifier = "==1.7.4" },
@@ -530,6 +533,9 @@ requires-dist = [
     { name = "sqlalchemy", specifier = ">=2.0.36" },
     { name = "uvicorn", specifier = ">=0.32.1" },
 ]
+
+[package.metadata.requires-dev]
+dev = []
 
 [[package]]
 name = "mypy-extensions"

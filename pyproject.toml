@@ -25,6 +25,7 @@ dependencies = [
     "pre-commit>=4.0.1",
     "autoflake>=2.3.1",
     "python-multipart>=0.0.20",
+    "greenlet>=3.1.1",
 ]
 
 [tool.pytest.ini_options]
@@ -45,3 +46,6 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 line_length = 88
+
+[dependency-groups]
+dev = []
